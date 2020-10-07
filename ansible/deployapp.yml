@@ -1,0 +1,34 @@
+---
+- name: Downloading simpleapp new version to the controller
+  hosts: localhost
+  gather_facts: true
+  tasks:
+   - name: Downloading simpleapp new version from GitHub Repository
+     git:
+       repo: https://github.com/aoltrabella/simpleapp.git
+       dest: /home/mancheex/challenge/simpleapp/
+       clone: true
+       update: true
+       remote: simpleapp
+
+- name : Deploy simpleapp in every node(if needed it will install and configure IIS)
+  hosts: all_nodes
+  gather_facts: true
+  tasks:
+   - name: Install Internet Information Services
+     win_feature:
+       name: "web-server"
+       state: present
+       restart: yes
+       include_sub_features: yes
+       include_management_tools: yes
+
+   - name: Start IIS service
+     win_service:
+       name: W3Svc
+       state: started
+
+   - name: Deploying simpleapp into the nodes
+     win_copy:
+       src: ../simpleapp/
+       dest: C:\Inetpub\wwwroot\       
