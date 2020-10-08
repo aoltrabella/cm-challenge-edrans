@@ -17,8 +17,8 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "winnode1" do |winnode1|
-    winnode1.vm.box = "devopsguys/Windows2012R2Eval"
-    winnode1.vm.box_version = "1.0.0"
+    winnode1.vm.box = "winnode"
+    winnode1.vm.communicator = "winrm"
     winnode1.vm.hostname = "node1"
     winnode1.vm.network "private_network", ip: "10.0.0.11"
     winnode1.vm.provider :virtualbox do |v|
@@ -29,8 +29,8 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "winnode2" do |winnode2|
-    winnode2.vm.box = "devopsguys/Windows2012R2Eval"
-    winnode2.vm.box_version = "1.0.0"
+    winnode2.vm.box = "winnode"
+    winnode2.vm.communicator = "winrm"
     winnode2.vm.hostname = "node2"
     winnode2.vm.network "private_network", ip: "10.0.0.12"
     winnode2.vm.provider :virtualbox do |v|

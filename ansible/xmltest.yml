@@ -5,7 +5,7 @@
    - name: Get count of total costumers
      community.general.xml:
        path: ~/challenge/customers.xml
-       xpath: /customer/asd
+       xpath: /customer/email
        count: yes
 #       register: hits
 
