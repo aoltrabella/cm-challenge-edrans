@@ -5,9 +5,9 @@ Vagrant.configure("2") do |config|
     nginx.vm.box = "nginx1.1"
     nginx.vm.hostname = "loadbalancer"
     nginx.vm.network "private_network", ip: "10.0.0.10"
-    nginx.vm.network "public_network",
-      use_dhcp_assigned_default_route: true
-      nginx.vm.network "forwarded_port", guest: 80, host: 8080, id: 'lb-http'
+    nginx.vm.network "public_network", ip: "192.168.0.9"
+#      use_dhcp_assigned_default_route: true
+#      nginx.vm.network "forwarded_port", guest: 80, host: 8080, id: 'lb-http'
 #      nginx.vm.network "forwarded_port", guest: 443, host: 443, id: 'lb-https'
     nginx.vm.provider :virtualbox do |v|
       v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]

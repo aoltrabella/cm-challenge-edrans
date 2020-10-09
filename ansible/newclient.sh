@@ -17,3 +17,5 @@ echo "<customer>
 </customer>" > new.client
 
 ansible-playbook newclient.yml
+
+rm new.client
