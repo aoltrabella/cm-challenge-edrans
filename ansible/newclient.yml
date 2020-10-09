@@ -1,0 +1,21 @@
+---
+- name: Updating customers.xml and deploying it into the nodes.
+  hosts: localhost
+  tasks:
+  - name: Adding new client information to customers.xml
+    blockinfile:
+      marker: ""
+      block: "{{ lookup('file', './new.client') }}"
+      path: ./customers.xml
+      insertafter: "</customer>"
+  - name: Removing blank lines blockinfile module put in
+    lineinfile :
+     path: ./customers.xml
+     state: absent
+     regexp: '^$'
+- name: Copying updated customers.xml into the nodes
+  hosts: all_nodes
+  tasks:
+  - win_copy:
+       src: ./customers.xml
+       dest: C:\Inetpub\wwwroot\customers\

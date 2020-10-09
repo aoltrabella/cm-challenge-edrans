@@ -1,9 +1,0 @@
----
-- hosts: localhost
-  tasks:
-  - name: Read an element's attribute values
-    community.general.xml:
-      path: /home/mancheex/challenge/customers.xml
-      xpath: /dataset/customer/email
-      content: attribute
-    register: xmlresp
