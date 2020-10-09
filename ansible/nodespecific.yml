@@ -1,0 +1,8 @@
+---
+- hosts: '{{ host }}'
+  tasks:
+  - name: Deliverying specific node to configuration to '{{ host }}'
+#    debug: msg="Host is {{ ansible_fqdn }}"
+    win_copy:
+       src: ./nodes_config/{{ host }}/
+       dest: C:\Inetpub\wwwroot\nodeconfig\

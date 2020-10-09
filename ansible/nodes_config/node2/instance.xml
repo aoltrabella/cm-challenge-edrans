@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+
+<customer>
+<id>2</id>
+<node_id>92656dbf-2f85-4074-9f22-cc31112f9aah</node_id>
+<app_name>LegacyApp</app_name>
+<app_version>2020.AF.101.64-build2-ok</app_version>
+<admin_email>tdibdin0@example.com</admin_email>
+<hostname>node2</hostname>
+<fqdn>node2.simpleapp.example.com</fqdn>
+</customer>
+</dataset>
