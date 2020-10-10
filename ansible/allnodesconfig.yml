@@ -1,0 +1,12 @@
+---
+- name: Deploying common configuration files to every node.
+  hosts: all_nodes
+  tasks:
+  - name: Copying 'main-config.ini' to every node.
+    win_copy:
+       src: ./nodes_config/main-config.ini
+       dest: C:\Inetpub\wwwroot\appconfig\
+  - name: Copying 'customers.xml' to every node.
+    win_copy:
+       src: ./nodes_config/customers.xml
+       dest: C:\Inetpub\wwwroot\customers\
