@@ -26,4 +26,6 @@ Inside this directory you will find all playbooks and scripts I've created to ge
 -  **newclient.yml** Playbook automatically executed by 'newclient.sh' to add new costumer information to 'costumers.xml' and deliver the updated file to the backend nodes.
 -  **nodespecific.yml** Playbook that uses /nodes-config/ to deploy specific node configurations by passing an extra **'host'** var. Example: **ansible-playbook nodespecific.yml --extra-vars "host=node1"**
 
-## Also you can checkout repository where simpleapp is uploaded: https://github.com/aoltrabella/simpleapp
+## Also you can checkout repository where simpleapp is uploaded:
+**https://github.com/aoltrabella/simpleapp** 
+It's a free template HTML webpage with some minor modifications to adjust it better to my needs. The original template can be downloaded from: https://www.template.net/editable/6061/multipurpose-html5-website
