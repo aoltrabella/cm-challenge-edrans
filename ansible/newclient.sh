@@ -16,6 +16,8 @@ echo "<customer>
 <surname>$surname_client</surname>
 </customer>" > new.client
 
+# Execute playbook to add the new client.
 ansible-playbook newclient.yml
 
+# Deleting new.client temporary file
 rm new.client

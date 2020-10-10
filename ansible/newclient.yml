@@ -6,16 +6,16 @@
     blockinfile:
       marker: ""
       block: "{{ lookup('file', './new.client') }}"
-      path: ./customers.xml
+      path: ./nodes_config/customers.xml
       insertafter: "</customer>"
   - name: Removing blank lines blockinfile module put in
     lineinfile :
-     path: ./customers.xml
+     path: ./nodes_config/customers.xml
      state: absent
      regexp: '^$'
 - name: Copying updated customers.xml into the nodes
   hosts: all_nodes
   tasks:
   - win_copy:
-       src: ./customers.xml
+       src: ./nodes_config/customers.xml
        dest: C:\Inetpub\wwwroot\customers\
