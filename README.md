@@ -23,5 +23,5 @@ Inside this directory you will find all playbooks and scripts I've created to ge
 -  **deployapp.yml** Playbook created to handle the deployment process of simpleapp new version.
 -  **inventory** Ansible inventory file.
 -  **newclient.sh** Simple bash script used to add a new costumer.
--  **newclient.yml** Playbook automatically executed by 'newclient.sh' to add new costumer information to 'costumer.xml' and deliver the updated file to the backend nodes.
+-  **newclient.yml** Playbook automatically executed by 'newclient.sh' to add new costumer information to 'costumers.xml' and deliver the updated file to the backend nodes.
 -  **nodespecific.yml** Playbook that uses /nodes-config/ to deploy specific node configurations by passing an extra **'host'** var. Example: **ansible-playbook nodespecific.yml --extra-vars "host=node1"**
